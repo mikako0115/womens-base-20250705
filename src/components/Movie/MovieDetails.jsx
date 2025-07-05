@@ -10,7 +10,7 @@ import {
 import { useUser } from '../../context/UserContext';
 import MovieRow from './MovieRow';
 
-const MovieDetails = ({ movieId, mediaType = 'movie', onClose, onMovieClick }) => {
+const MovieDetails = ({ movieId, mediaType = 'movie', onClose, onMovieClick, onPlayVideo }) => {
   const [details, setDetails] = useState(null);
   const [credits, setCredits] = useState(null);
   const [recommendations, setRecommendations] = useState([]);
@@ -69,7 +69,10 @@ const MovieDetails = ({ movieId, mediaType = 'movie', onClose, onMovieClick }) =
     if (details) {
       // 視聴履歴に追加
       addToWatchHistory({ ...details, mediaType });
-      // 実際の再生処理はここに追加
+      // 動画プレイヤーを開く
+      if (onPlayVideo) {
+        onPlayVideo();
+      }
     }
   };
 

@@ -30,12 +30,22 @@
   display: flex;
   align-items: center;
   gap: 3rem;
+  flex: 1;
+}
+
+.header-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
 }
 
 .header-right {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  flex: 1;
+  justify-content: flex-end;
 }
 
 .netflix-logo {
@@ -61,14 +71,27 @@
   color: var(--netflix-light-gray);
 }
 
-.search-icon {
+.search-toggle {
+  background: none;
+  border: none;
   color: var(--netflix-white);
   cursor: pointer;
   transition: color 0.3s ease;
+  padding: 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.search-icon:hover {
+.search-toggle:hover {
   color: var(--netflix-light-gray);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.search-toggle.active {
+  color: var(--netflix-red);
+  background: rgba(229, 9, 20, 0.2);
 }
 
 .profile-avatar {
@@ -164,6 +187,19 @@
 .info-button {
   background-color: rgba(109, 109, 110, 0.7);
   color: var(--netflix-white);
+}
+
+/* 検索結果 */
+.search-results {
+  padding: 2rem 4%;
+  background-color: var(--netflix-black);
+}
+
+.search-results h2 {
+  color: var(--netflix-white);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
 }
 
 /* 映画行セクション */
@@ -273,10 +309,22 @@
   .header-content {
     padding: 0 2%;
   }
+
+  .header-center {
+    flex: 0;
+  }
   
   .hero-content,
   .movie-row {
     padding: 0 2%;
+  }
+
+  .search-results {
+    padding: 1rem 2%;
+  }
+
+  .search-results h2 {
+    font-size: 1.3rem;
   }
 }
 

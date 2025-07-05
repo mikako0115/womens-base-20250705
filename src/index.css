@@ -1,11 +1,70 @@
+/* Netflix風のグローバルスタイリング */
 :root {
+  --netflix-red: #e50914;
+  --netflix-black: #141414;
+  --netflix-dark-gray: #181818;
+  --netflix-gray: #333333;
+  --netflix-light-gray: #b3b3b3;
+  --netflix-white: #ffffff;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--netflix-black);
+  color: var(--netflix-white);
+  overflow-x: hidden;
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* スクロールバーのスタイリング */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--netflix-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--netflix-gray);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--netflix-light-gray);
+}
+
+/* 基本的なリンクスタイル */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+/* レスポンシブ画像 */
+img {
+  max-width: 100%;
+  height: auto;
 }
